@@ -1,0 +1,1 @@
+Alias /_matrix-internal/identity/v1/check_credentials /var/www/matrix/check_credentials.php
