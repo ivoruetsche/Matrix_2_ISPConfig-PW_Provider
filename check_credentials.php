@@ -1,8 +1,6 @@
 <?php
 
 ##
-## 1.2024 urig.digital/ir
-##
 ## Refer:
 ##   Matrix: https://github.com/ma1uta/matrix-synapse-rest-password-provider
 ##   ISPConfig: https://timmehosting.de/ispconfig-api-schnittstelle-zur-automatisierung
@@ -59,19 +57,10 @@ try {
 
     if($client->logout($session_id)) {
         echo json_encode($oResult);
-/*
-        file_put_contents("result.data", json_encode($oResult));
-        file_put_contents("matrix.data", json_encode($oMatrixRequest));
-        file_put_contents("ispconfig_a.data", json_encode($alias_record));
-        file_put_contents("ispconfig_m.data", json_encode($mail_record));
-        file_put_contents("matrix_id.data", json_encode($aUsername));
-        file_put_contents("matrix_username.data", $sUsername);
-*/
     }
 
 } catch (SoapFault $e) {
     $oResult["auth"]["success"] = false;
-    file_put_contents("ispconfig_errpr.data", $client->__getLastResponse());
     die(json_encode($oResult)); 
 }
 ?>
