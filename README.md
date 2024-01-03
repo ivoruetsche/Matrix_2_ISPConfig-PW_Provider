@@ -10,6 +10,8 @@ Authenticate users on a Matrix server against ISPConfig Mailboxes
 - Copy matrix.vhost to /etc/apache2/sites-available/
 - Symlink /etc/apache2/sites-enabled/000-matrix.vhost -> /etc/apache2/sites-available/matrix.vhost
 - restart apache
+- Add a remote user on ISPConfig with permissions to "Mail user functions" and "Mail alias functions". Modify the new credentials on /var/www/matrix/soap_config.php
+
 
 ## Matrix Server
 I use https://github.com/spantaleev/matrix-docker-ansible-deploy for the Matrix deployment. For this, configure the parameters from the vars.yml file on your installation.
